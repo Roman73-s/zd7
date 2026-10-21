@@ -2,19 +2,25 @@
 
 $(document).ready(function () {
   $('.artex-slider').slick({
-    dots: true,             // Включает пейджер (точки внизу)
-    infinite: true,         // Бесконечная прокрутка
-    speed: 500,             // Скорость анимации
-    slidesToShow: 3,        // Показывать 3 картинки одновременно
-    slidesToScroll: 1,      // Пролистывать по 1
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
     responsive: [
       {
-        breakpoint: 768,    // Если экран меньше 768px (смартфоны)
+        breakpoint: 992,
         settings: {
-          slidesToShow: 1,  // Показывать только 1 картинку
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       }
     ]
