@@ -113,3 +113,64 @@ img {
   height: auto;
   display: block;
 }
+
+/*Стили для Галереи  */
+
+.artex-slider {
+  margin: 0 -10px; /* Компенсация отступов между слайдами */
+}
+
+.artex-slider div {
+  padding: 10px; /* Отступы между картинками */
+}
+
+.artex-slider img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #7a1f1f; /* Красная рамка */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(122, 31, 31, 0.5); /* Легкое свечение */
+  transition: transform 0.3s;
+}
+
+.artex-slider img:hover {
+  transform: scale(1.02); /* Легкое увеличение при наведении */
+}
+
+/* Стилизация стрелок  */
+.slick-prev:before,
+.slick-next:before {
+  color: #ffb3b3 !important;
+  font-size: 30px;
+}
+
+.slick-prev {
+  left: -35px;
+}
+
+.slick-next {
+  right: -35px;
+}
+
+/*  */
+.slick-dots li button:before {
+  color: #555 !important;
+  font-size: 12px;
+  opacity: 1;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ff4d4d !important; /* Активная точка — ярко-красная */
+}
+
+/* На мобильных убираем вылезание стрелок за экран */
+@media (max-width: 768px) {
+  .slick-prev {
+    left: 5px;
+    z-index: 1;
+  }
+  .slick-next {
+    right: 5px;
+    z-index: 1;
+  }
+}
