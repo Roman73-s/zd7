@@ -1,176 +1,125 @@
-/*Цвета и тема (Bootstrap отвечает за структуру)*/
-
+/* Базовые стили (темная тема) */
 body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   background: #1e1e1e;
   color: #dcdcdc;
+  line-height: 1.5;
 }
 
 /* Шапка */
 .site-header {
+  width: 100%;
   background: #7a1f1f;
   color: #f0f0f0;
 }
 
 .site-header h1 {
   color: #f0f0f0;
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .logo {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background: #f0f0f0;
 }
 
-.nav-link {
-  color: #f0f0f0 !important;
-  font-weight: bold;
-}
-
-.nav-link:hover {
-  color: #ffb3b3 !important;
-}
-
-/* Блоки контента */
-.block {
-  background: #2a2a2a;
-  padding: 15px;
-  border: 1px solid #3a3a3a;
-}
-
-.block h2 {
+/* Контент */
+main h2 {
   color: #f0f0f0;
-}
-
-/* Ссылки в списке */
-.links-list a {
-  color: #e0a0a0;
-  text-decoration: none;
-}
-
-.links-list a:hover {
-  color: #ffb3b3;
-  text-decoration: underline;
-}
-
-/* Таблица */
-.data-table {
-  color: #dcdcdc;
-}
-
-.data-table th {
-  background: #7a1f1f !important;
-  color: #f0f0f0 !important;
-  border-color: #444 !important;
-}
-
-.data-table td {
-  border-color: #444 !important;
-}
-
-.data-table tr:nth-child(even) {
-  background: #2a2a2a;
-}
-
-.data-table tr:nth-child(odd) {
-  background: #232323;
-}
-
-/* Форма */
-.form-control {
-  background: #1a1a1a;
-  color: #dcdcdc;
-  border: 1px solid #555;
-}
-
-.form-control:focus {
-  background: #1a1a1a;
-  color: #dcdcdc;
-  border-color: #a02a2a;
-  box-shadow: 0 0 0 0.2rem rgba(160, 42, 42, 0.4);
-}
-
-.form-check-label {
-  color: #dcdcdc;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 /* Подвал */
 .site-footer {
+  width: 100%;
   background: #141414;
   color: #b0b0b0;
 }
 
-/* Карта ссылок*/
-img {
-  max-width: 100%;
-  height: auto;
-}
+/* =========================================
+   Стили для Галереи (Slick Slider)
+   ========================================= */
 
-.map-img {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  display: block;
+.slider-wrapper {
+  padding: 0 30px; /* Отступы, чтобы стрелки не прилипали к краям */
 }
-
-/*Стили для Галереи  */
 
 .artex-slider {
-  margin: 0 -10px; /* Компенсация отступов между слайдами */
+  margin: 0 -10px;
 }
 
 .artex-slider div {
-  padding: 10px; /* Отступы между картинками */
+  padding: 10px;
 }
 
 .artex-slider img {
   width: 100%;
-  height: auto;
-  border: 2px solid #7a1f1f; /* Красная рамка */
+  height: 450px; /* Вертикальные картинки! */
+  object-fit: cover; /* Обрезает без искажений */
+  border: 2px solid #7a1f1f;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(122, 31, 31, 0.5); /* Легкое свечение */
-  transition: transform 0.3s;
+  box-shadow: 0 0 15px rgba(122, 31, 31, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .artex-slider img:hover {
-  transform: scale(1.02); /* Легкое увеличение при наведении */
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
 }
 
-/* Стилизация стрелок  */
+/* Стилизация стрелок Slick */
 .slick-prev:before,
 .slick-next:before {
-  color: #ffb3b3 !important;
+  color: #ff4d4d !important;
   font-size: 30px;
 }
 
 .slick-prev {
-  left: -35px;
+  left: -10px;
 }
 
 .slick-next {
-  right: -35px;
+  right: -10px;
 }
 
-/*  */
+/* Стилизация пейджера (точек) */
+.slick-dots {
+  bottom: -40px;
+}
+
 .slick-dots li button:before {
   color: #555 !important;
-  font-size: 12px;
+  font-size: 14px;
   opacity: 1;
 }
 
 .slick-dots li.slick-active button:before {
-  color: #ff4d4d !important; /* Активная точка — ярко-красная */
+  color: #ff4d4d !important;
 }
 
-/* На мобильных убираем вылезание стрелок за экран */
+/* На мобильных убираем отступы для стрелок */
 @media (max-width: 768px) {
-  .slick-prev {
-    left: 5px;
-    z-index: 1;
+  .slider-wrapper {
+    padding: 0;
   }
+  
+  .slick-prev {
+    left: 10px;
+    z-index: 10;
+  }
+  
   .slick-next {
-    right: 5px;
-    z-index: 1;
+    right: 10px;
+    z-index: 10;
+  }
+  
+  .artex-slider img {
+    height: 400px; /* Чуть меньше на телефонах */
   }
 }
