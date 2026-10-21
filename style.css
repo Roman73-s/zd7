@@ -38,8 +38,10 @@ main h2 {
   color: #b0b0b0;
 }
 
+/* ==== Настройка слайдера ==== */
 .slider-wrapper {
-  padding: 0 30px;
+  padding: 0 50px; /* Увеличили отступы, чтобы стрелки влезли */
+  position: relative;
 }
 
 .artex-slider {
@@ -65,20 +67,28 @@ main h2 {
   box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
 }
 
+/* ==== Стилизация стрелок ==== */
+.slick-prev, .slick-next {
+  width: 40px;
+  height: 40px;
+  z-index: 100;
+}
+
 .slick-prev:before,
 .slick-next:before {
   color: #ff4d4d !important;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .slick-prev {
-  left: -10px;
+  left: -45px; /* Сдвинули влево за пределы картинок */
 }
 
 .slick-next {
-  right: -10px;
+  right: -45px; /* Сдвинули вправо за пределы картинок */
 }
 
+/* ==== Стилизация точек ==== */
 .slick-dots {
   bottom: -40px;
 }
@@ -93,19 +103,18 @@ main h2 {
   color: #ff4d4d !important;
 }
 
+/* ==== Мобильная версия ==== */
 @media (max-width: 768px) {
   .slider-wrapper {
     padding: 0;
   }
   
   .slick-prev {
-    left: 10px;
-    z-index: 10;
+    left: 5px; /* На мобилках стрелки немного заходят на картинку, чтобы не обрезались краем экрана */
   }
   
   .slick-next {
-    right: 10px;
-    z-index: 10;
+    right: 5px;
   }
   
   .artex-slider img {
