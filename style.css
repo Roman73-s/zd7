@@ -36,21 +36,25 @@ main h2 {
   width: 100%;
   background: #141414;
   color: #b0b0b0;
-  padding-bottom: 20px; 
+  padding-bottom: 20px;
 }
 
-/* ==== Настройка слайдера ==== */
+/* =========================================
+   НАСТРОЙКА СЛАЙДЕРА (Десктоп и Планшеты)
+   ========================================= */
+
+/* Обертка для слайдера. Даем отступы по бокам, чтобы стрелки влезли */
 .slider-wrapper {
   position: relative;
-  padding: 0 30px; 
+  padding: 0 40px; 
 }
 
 .artex-slider {
-  margin: 0;
+  margin: 0 -10px; /* Компенсация отступов слайдов */
 }
 
 .artex-slider .slick-slide {
-  padding: 0 10px;
+  padding: 0 10px; /* Отступы между картинками */
   box-sizing: border-box;
 }
 
@@ -69,28 +73,31 @@ main h2 {
   box-shadow: 0 0 25px rgba(255, 77, 77, 0.6);
 }
 
-/* ==== Стрелки ==== */
+/* ==== СТРЕЛКИ (Десктоп) ==== */
 .slick-prev, .slick-next {
   width: 40px;
   height: 40px;
-  z-index: 100;
+  z-index: 100; /* Чтобы всегда были поверх картинок */
 }
 
+/* Делаем стандартные стрелки Slick красными и крупными */
 .slick-prev:before,
 .slick-next:before {
   color: #ff4d4d !important;
-  font-size: 40px;
+  font-size: 40px !important;
+  opacity: 1 !important;
 }
 
+/* Выдвигаем стрелки за пределы картинок */
 .slick-prev {
-  left: -10px;
+  left: -45px !important; 
 }
 
 .slick-next {
-  right: -10px;
+  right: -45px !important;
 }
 
-/* ==== Точки ==== */
+/* ==== ТОЧКИ (Пейджер) ==== */
 .slick-dots {
   bottom: -40px;
 }
@@ -106,20 +113,22 @@ main h2 {
 }
 
 /* =========================================
-   МОБИЛЬНАЯ ВЕРСИЯ (Исправляем баги)
+   МОБИЛЬНАЯ ВЕРСИЯ (Смартфоны)
    ========================================= */
 @media (max-width: 768px) {
   
   .slider-wrapper {
-    padding: 0; /* Убираем отступы, чтобы картинка была ровно по центру */
+    padding: 0; /* Убираем отступы для экономии места */
   }
 
-  /* Убираем отступы у слайдов на мобилке, чтобы не торчали края */
-  .artex-slider .slick-slide {
-    padding: 0; 
+  .artex-slider {
+    margin: 0; 
   }
-  
-  /* Делаем картинку на весь экран */
+
+  .artex-slider .slick-slide {
+    padding: 0; /* На мобилках убираем отступы, чтобы не было кусков соседних фото */
+  }
+
   .artex-slider img {
     height: 400px;
     border-left: none;
@@ -127,39 +136,28 @@ main h2 {
     border-radius: 0;
   }
 
-  /* ИДЕАЛЬНОЕ ЦЕНТРИРОВАНИЕ СТРЕЛОК */
+  /* Стрелки на мобилках ставим ПОВЕРХ картинок, чтобы не обрезались краем экрана */
   .slick-prev, .slick-next {
+    background-color: rgba(30, 30, 30, 0.6); /* Полупрозрачный темный фон */
+    border-radius: 50%;
     width: 40px;
     height: 40px;
     top: 50%;
-    transform: translateY(-50%); /* Центрируем по вертикали */
-    background-color: rgba(30, 30, 30, 0.6); /* Полупрозрачный фон */
-    border-radius: 50%; /* Делаем кружочком */
-    display: flex !important; /* Включаем flexbox для центрирования иконки */
-    align-items: center;
-    justify-content: center;
+    transform: translateY(-50%);
   }
   
-  /* Прячем стандартные глючные иконки Slick и рисуем свои */
-  .slick-prev:before, .slick-next:before {
-    display: none;
-  }
-
-  /* Рисуем стрелочки через SVG для идеального вида */
   .slick-prev {
-    left: 10px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff4d4d'%3E%3Cpath d='M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z'/%3E%3C/svg%3E");
-    background-size: 30px;
-    background-repeat: no-repeat;
-    background-position: center;
+    left: 10px !important; /* Чуть заходим на картинку */
+  }
+  
+  .slick-next {
+    right: 10px !important; /* Чуть заходим на картинку */
   }
 
-  .slick-next {
-    right: 10px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff4d4d'%3E%3Cpath d='M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z'/%3E%3C/svg%3E");
-    background-size: 30px;
-    background-repeat: no-repeat;
-    background-position: center;
+  /* Уменьшаем стрелки, чтобы не перекрывали фото */
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px !important;
   }
 
   .slick-dots {
