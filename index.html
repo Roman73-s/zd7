@@ -6,19 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ARTEX — Галерея (ЛР7)</title>
   
-  <!-- Подключение стилей Slick Slider -->
+  <!-- Стили Slick Slider -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   
   <!-- Твой стиль -->
   <link rel="stylesheet" href="style.css">
-  
-  <!-- jQuery и Slick JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  
-  <!-- Твой скрипт инициализации -->
-  <script src="script.js" defer></script>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -38,23 +31,21 @@
 
   <main class="container py-5 flex-grow-1">
     <div class="row justify-content-center">
-      <div class="col-12">
-        <h2 class="text-center mb-4">Галерея нейро-имплантов</h2>
+      <div class="col-12 col-lg-10">
+        <h2 class="text-center mb-4">Архивы Найт-Сити</h2>
         
-        <!-- Контейнер для слайдера -->
         <div class="slider-wrapper">
           <div class="artex-slider">
-            <div><img src="https://picsum.photos/400/300?random=1" alt="Имплант 1"></div>
-            <div><img src="https://picsum.photos/400/300?random=2" alt="Имплант 2"></div>
-            <div><img src="https://picsum.photos/400/300?random=3" alt="Имплант 3"></div>
-            <div><img src="https://picsum.photos/400/300?random=4" alt="Имплант 4"></div>
-            <div><img src="https://picsum.photos/400/300?random=5" alt="Имплант 5"></div>
-            <div><img src="https://picsum.photos/400/300?random=6" alt="Имплант 6"></div>
-            <div><img src="https://picsum.photos/400/300?random=7" alt="Имплант 7"></div>
-            <div><img src="https://picsum.photos/400/300?random=8" alt="Имплант 8"></div>
+            <div><img src="img/img1.jpg" alt="Пейзаж 1"></div>
+            <div><img src="img/img2.jpg" alt="Пейзаж 2"></div>
+            <div><img src="img/img3.jpg" alt="Пейзаж 3"></div>
+            <div><img src="img/img4.jpg" alt="Пейзаж 4"></div>
+            <div><img src="img/img5.jpg" alt="Пейзаж 5"></div>
+            <div><img src="img/img6.jpg" alt="Пейзаж 6"></div>
+            <div><img src="img/img7.jpg" alt="Пейзаж 7"></div>
+            <div><img src="img/img8.jpg" alt="Пейзаж 8"></div>
           </div>
         </div>
-
       </div>
     </div>
   </main>
@@ -65,5 +56,11 @@
     </div>
   </footer>
 
+  <!-- jQuery и Slick JS (подключаем внизу страницы, чтобы не тормозило загрузку) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+  <!-- Твой скрипт -->
+  <script src="script.js"></script>
 </body>
 </html>
