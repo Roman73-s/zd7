@@ -7,17 +7,18 @@ $(document).ready(function () {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: false,
+    swipeToSlide: true, /* Позволяет свайпать пальцем на телефоне */
+    touchMove: true,
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 992, /* На планшетах показываем 2 картинки */
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 768, /* На телефонах показываем 1 картинку */
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1
